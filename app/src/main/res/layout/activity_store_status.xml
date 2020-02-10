@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp">
+
+        <LinearLayout
+            android:id="@+id/lin_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp">
+
+            <ImageView
+                android:layout_width="9.5dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/black_bank"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="营业状态调整"
+            android:textColor="@color/color_33333"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e6e6e6"
+        android:layout_marginTop="64dp"/>
+
+    <ImageView
+        android:id="@+id/img_status"
+        android:layout_width="122dp"
+        android:layout_height="122dp"
+        android:src="@mipmap/open_status"
+        android:layout_marginTop="92dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="营业中"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="222dp"/>
+
+    <com.zxdc.utils.library.view.ClickTextView
+        android:id="@+id/tv_update"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_no_select"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="278dp"
+        android:text="停止营业"
+        android:textSize="14sp"
+        android:textColor="@color/color_ff6d32"
+        android:gravity="center"/>
+
+</RelativeLayout>

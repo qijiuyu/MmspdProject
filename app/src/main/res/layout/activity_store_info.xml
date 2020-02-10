@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <LinearLayout
+            android:id="@+id/lin_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp">
+
+            <ImageView
+                android:layout_width="9.5dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/black_bank"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="店铺信息"
+            android:textColor="@color/color_33333"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e6e6e6"
+        android:layout_marginTop="64dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="店铺头像"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginTop="103dp"
+        android:layout_marginLeft="10dp"/>
+
+    <com.zxdc.utils.library.view.OvalImageViews
+        android:id="@+id/img_icon"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:src="@mipmap/default_head"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e6e6e6"
+        android:layout_marginTop="150dp"
+        android:id="@+id/view2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="店长信息"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginTop="174dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="174dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e6e6e6"
+        android:layout_marginTop="202dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="联系电话"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginTop="223dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13654698769"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="223dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e6e6e6"
+        android:layout_marginTop="251dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="店铺地址"
+        android:textSize="14sp"
+        android:textColor="@color/color_33333"
+        android:layout_marginTop="285dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="261dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_remark"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="271dp"
+        android:text="北京市朝阳区东十里堡路1号"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp"
+        android:gravity="right|center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="326dp"
+        android:background="@color/color_F7F7F7"/>
+
+    <RelativeLayout
+        android:id="@+id/rel_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="营业状态"
+            android:textSize="14sp"
+            android:textColor="@color/color_33333"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="营业中"
+            android:textColor="@color/color_ff6d32"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="34dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/next"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

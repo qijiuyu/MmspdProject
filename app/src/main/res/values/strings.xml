@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">买萌商品端</string>
+    <string name="digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+</resources>
