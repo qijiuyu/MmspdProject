@@ -15,6 +15,7 @@ import com.ylean.mmspd.R;
 import com.zxdc.utils.library.base.BaseActivity;
 import com.zxdc.utils.library.bean.Store;
 import com.zxdc.utils.library.http.HandlerConstant;
+import com.zxdc.utils.library.http.HttpConstant;
 import com.zxdc.utils.library.http.HttpMethod;
 import com.zxdc.utils.library.util.SPUtil;
 import com.zxdc.utils.library.util.ToastUtil;
@@ -90,7 +91,9 @@ public class UserInfoActivity extends BaseActivity {
                 break;
             //账号设置
             case R.id.rel_account:
-                setClass(AccountActivity.class);
+                Intent intent2=new Intent(this,AccountActivity.class);
+                intent2.putExtra("mobile",store.getData().getMobile());
+                startActivity(intent2);
                 break;
             //联系平台
             case R.id.rel_abount:
@@ -132,7 +135,7 @@ public class UserInfoActivity extends BaseActivity {
      * 显示店铺信息
      */
     private void showStoreInfo(){
-        Glide.with(this).load(store.getData().getImgurl()).error(R.mipmap.default_head).override(59,59).centerCrop().into(imgIcon);
+        Glide.with(this).load(HttpConstant.IP+store.getData().getImgurl()).error(R.mipmap.default_head).override(59,59).centerCrop().into(imgIcon);
         tvName.setText(store.getData().getName());
         if(store.getData().getStatus()==2){
             tvStatus.setText("营业中");

@@ -8,6 +8,7 @@ import android.widget.VideoView;
 
 import com.ylean.mmspd.R;
 import com.zxdc.utils.library.base.BaseActivity;
+import com.zxdc.utils.library.http.HttpConstant;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +29,7 @@ public class PlayVideoActivity extends BaseActivity {
         //设置有进度条可以拖动快进
         MediaController localMediaController = new MediaController(this);
         videoView.setMediaController(localMediaController);
-        videoView.setVideoPath(videoUrl);
+        videoView.setVideoPath(HttpConstant.IP+videoUrl);
         videoView.requestFocus();
         videoView.start();
 

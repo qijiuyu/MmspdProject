@@ -142,12 +142,14 @@
         android:paddingRight="5dp"/>
 
     <View
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_marginTop="326dp"
         android:background="@color/color_F7F7F7"/>
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/rel_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -102,6 +102,7 @@ public class SettingRankingFragment extends BaseFragment {
     /**
      * EventBus注解
      */
+    private String startTime,endTime;
     @Subscribe
     public void onEvent(EventBusType eventBusType) {
         switch (eventBusType.getStatus()) {
@@ -111,6 +112,11 @@ public class SettingRankingFragment extends BaseFragment {
                     return;
                 }
                 String[] str = time.split(",");
+                if(str[0].equals(startTime) && str[1].equals(endTime)){
+                    return;
+                }
+                startTime=str[0];
+                endTime=str[1];
                 //获取商品排名数据
                 goodRanking(str[1], str[0]);
                 break;

@@ -12,6 +12,7 @@ import com.ylean.mmspd.R;
 import com.ylean.mmspd.utils.SelectPhoto;
 import com.zxdc.utils.library.base.BaseActivity;
 import com.zxdc.utils.library.bean.Store;
+import com.zxdc.utils.library.http.HttpConstant;
 import com.zxdc.utils.library.view.OvalImageViews;
 import java.io.File;
 import butterknife.BindView;
@@ -56,8 +57,8 @@ public class StoreInfoActivity extends BaseActivity {
         if(store==null){
             return;
         }
-        Glide.with(this).load(store.getData().getImgurl()).error(R.mipmap.default_head).override(59,59).centerCrop().into(imgIcon);
-        tvName.setText(store.getData().getName());
+        Glide.with(this).load(HttpConstant.IP+store.getData().getImgurl()).error(R.mipmap.default_head).override(59,59).centerCrop().into(imgIcon);
+        tvName.setText(store.getData().getShopowner());
         tvMobile.setText(store.getData().getMobile());
         tvAddress.setText(store.getData().getAddress());
         if(store.getData().getStatus()==2){

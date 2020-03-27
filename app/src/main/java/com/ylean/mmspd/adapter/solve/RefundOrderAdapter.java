@@ -256,7 +256,7 @@ public class RefundOrderAdapter extends BaseAdapter {
                 }
 
                 if(status==19 && msg.equals("发送")){
-                    EditText etCode= (EditText) v.getTag();
+                    EditText etCode= (EditText) v.getTag(R.id.tag1);
                     String code=etCode.getText().toString();
                     if(TextUtils.isEmpty(code)){
                         ToastUtil.showLong("请输入快递单号(建议复制粘贴)");

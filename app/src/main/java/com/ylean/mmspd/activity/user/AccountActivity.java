@@ -38,6 +38,8 @@ public class AccountActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         ButterKnife.bind(this);
+        String phone=getIntent().getStringExtra("mobile");
+        tvMobile.setText(phone.substring(0, 3) + "****" + phone.substring(phone.length() - 4, phone.length()));
     }
 
 

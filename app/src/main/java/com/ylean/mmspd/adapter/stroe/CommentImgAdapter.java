@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.ylean.mmspd.R;
 import com.ylean.mmspd.activity.store.PlayVideoActivity;
 import com.ylean.mmspd.activity.store.ShowImgActivity;
+import com.zxdc.utils.library.http.HttpConstant;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,7 +62,7 @@ public class CommentImgAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         //显示图片
-        String imgUrl=imgs[position];
+        String imgUrl= HttpConstant.IP+imgs[position];
         holder.imgIcon.setTag(R.id.imageid,imgUrl);
         if(holder.imgIcon.getTag(R.id.imageid)!=null && imgUrl==holder.imgIcon.getTag(R.id.imageid)){
             Glide.with(context).load(imgUrl).override(82,82).centerCrop().into(holder.imgIcon);

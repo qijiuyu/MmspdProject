@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.ylean.mmspd.R;
 import com.zxdc.utils.library.base.BaseActivity;
+import com.zxdc.utils.library.http.HttpConstant;
 import com.zxdc.utils.library.util.SPUtil;
 import com.zxdc.utils.library.view.TouchImageView;
 
@@ -84,7 +85,7 @@ public class ShowImgActivity extends BaseActivity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             TouchImageView imageView = new TouchImageView(context);
-            Glide.with(context).load(imgs[position]).into(imageView);
+            Glide.with(context).load(HttpConstant.IP+imgs[position]).into(imageView);
             container.addView(imageView);
             return imageView;
         }

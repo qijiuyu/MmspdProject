@@ -97,8 +97,8 @@ public class OrderDetailsActivity extends BaseActivity {
         //显示商品列表
         OrderDetailsAdapter goodsAdapter = new OrderDetailsAdapter(this,orderDetailsBean.getSkulist());
         listView.setAdapter(goodsAdapter);
-        tvDeliveryTime.setText("¥" + Util.setDouble(orderDetailsBean.getFreight(),2));
-        tvCouponsTime.setText("¥" +Util.setDouble(orderDetailsBean.getDiscount(),2));
+        tvDeliveryTime.setText("+¥" + Util.setDouble(orderDetailsBean.getFreight(),2));
+        tvCouponsTime.setText("-¥" +Util.setDouble(orderDetailsBean.getDiscount(),2));
         tvOrderCode.setText(orderDetailsBean.getOrdernum());
         tvOrderTime.setText(orderDetailsBean.getAddorderdate());
         tvReceivedTime.setText(orderDetailsBean.getConfirmdate());

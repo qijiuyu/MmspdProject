@@ -79,7 +79,6 @@
 
     <com.zxdc.utils.library.view.MyGridView
         android:id="@+id/gv_icon"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_content"

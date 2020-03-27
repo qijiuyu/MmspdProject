@@ -71,7 +71,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:text="差评（1-3星）"
+            android:text="差评（1-2星）"
             android:textColor="@color/color_33333"
             android:textSize="13sp"
             android:gravity="center"/>

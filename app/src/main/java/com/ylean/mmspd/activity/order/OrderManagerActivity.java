@@ -7,12 +7,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ylean.mmspd.R;
@@ -44,6 +48,8 @@ public class OrderManagerActivity extends BaseActivity implements TextView.OnEdi
     PagerSlidingTabStrip tabs;
     @BindView(R.id.pager)
     ViewPager pager;
+    @BindView(R.id.img_close)
+    ImageView imgClose;
     private DisplayMetrics dm;
     //进行中的订单
     private OngoingFragment ongoingFragment=new OngoingFragment();
@@ -73,6 +79,26 @@ public class OrderManagerActivity extends BaseActivity implements TextView.OnEdi
         pager.setOffscreenPageLimit(4);
         tabs.setViewPager(pager);
         setTabsValue();
+        etKey.addTextChangedListener(new TextWatcher() {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            public void afterTextChanged(Editable s) {
+                if(s.toString().length()>0){
+                    imgClose.setVisibility(View.VISIBLE);
+                }else{
+                    imgClose.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        imgClose.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                etKey.setText(null);
+            }
+        });
     }
 
 

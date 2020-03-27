@@ -135,7 +135,7 @@ public class SolveActivity extends BaseActivity {
             super(fm);
         }
 
-        private final String[] titles = {"新订单", "退款单"};
+        private final String[] titles = {"新订单", "退换单"};
 
         @Override
         public CharSequence getPageTitle(int position) {

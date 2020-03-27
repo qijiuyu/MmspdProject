@@ -82,6 +82,7 @@ public class OngoingAdapter extends BaseAdapter {
         holder.tvGetMoney.setText("¥"+ Util.setDouble(orderBean.getSupplierMoney(),2));
         holder.tvOrderTime.setText("下单时间："+orderBean.getAddorderdate());
         holder.tvOrderCode.setText("订单编号："+orderBean.getOrdernum());
+        holder.tvDeliveryTime.setText(orderBean.getDeliverdate());
 
 
         //展开或收起商品列表
