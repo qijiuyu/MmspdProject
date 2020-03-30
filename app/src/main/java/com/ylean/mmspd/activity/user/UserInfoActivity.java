@@ -97,6 +97,7 @@ public class UserInfoActivity extends BaseActivity {
                 break;
             //联系平台
             case R.id.rel_abount:
+                setClass(CustomerWebView.class);
                 break;
             default:
                 break;

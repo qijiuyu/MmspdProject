@@ -221,7 +221,6 @@ public class RefundOrderFragment extends BaseFragment implements MyRefreshLayout
     private void getOrderList(int index){
         if(isVisibleToUser && view!=null && listAll.size()==0){
             reList.startRefresh();
-            HttpMethod.getOrderList(String.valueOf(page),null,"2",index,handler);
         }
     }
 

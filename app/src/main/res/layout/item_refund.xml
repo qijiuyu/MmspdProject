@@ -241,8 +241,7 @@
                     android:id="@+id/tv_actual_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_xj_money"
-                    android:text="￥71.00"
+                    android:layout_below="@id/tv_ps_money"
                     android:textSize="16sp"
                     android:textColor="@color/color_33333"
                     android:layout_alignParentRight="true"
@@ -375,7 +374,9 @@
                     android:textSize="13sp"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp"/>
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
 
             </RelativeLayout>
 

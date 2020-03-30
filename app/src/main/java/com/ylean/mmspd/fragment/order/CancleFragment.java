@@ -169,7 +169,6 @@ public class CancleFragment extends BaseFragment implements MyRefreshLayoutListe
     private void getOrderList(int index){
         if(isVisibleToUser && view!=null && listAll.size()==0){
             reList.startRefresh();
-            HttpMethod.getOrderList(String.valueOf(page), OrderManagerActivity.keys,"6",index,handler);
         }
     }
 

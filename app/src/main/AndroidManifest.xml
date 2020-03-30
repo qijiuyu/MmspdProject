@@ -70,6 +70,7 @@
         <activity android:name=".activity.order.OrderDetailsActivity"  android:screenOrientation="portrait"/>
         <activity android:name=".activity.store.ShowImgActivity"  android:screenOrientation="portrait"/>
         <activity android:name=".activity.store.PlayVideoActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.user.CustomerWebView"  android:screenOrientation="portrait"/>
 
         <!-- 极光推送的配置-->
         <service

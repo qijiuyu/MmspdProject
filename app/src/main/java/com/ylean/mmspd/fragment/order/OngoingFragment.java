@@ -168,7 +168,6 @@ public class OngoingFragment extends BaseFragment implements MyRefreshLayoutList
     private void getOrderList(int index){
         if(isVisibleToUser && view!=null && listAll.size()==0){
             reList.startRefresh();
-            HttpMethod.getOrderList(String.valueOf(page), OrderManagerActivity.keys,"3",index,handler);
         }
     }
 

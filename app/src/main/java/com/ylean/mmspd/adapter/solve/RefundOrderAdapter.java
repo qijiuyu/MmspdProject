@@ -99,9 +99,15 @@ public class RefundOrderAdapter extends BaseAdapter {
         holder.tvOrderTime.setText("下单时间："+orderBean.getAddorderdate());
         holder.tvOrderCode.setText("订单编号："+orderBean.getOrdernum());
 
+        if(orderBean.getStatus()==19){
+            holder.tvGetGood.setText("发货");
+        }else{
+            holder.tvGetGood.setText("同意");
+        }
+
         //订单状态
         final int status=orderBean.getStatus();
-        if(status<=11){
+        if(status<11){
             holder.rel1.setVisibility(View.VISIBLE);
             holder.rel2.setVisibility(View.GONE);
         }else{
@@ -181,7 +187,11 @@ public class RefundOrderAdapter extends BaseAdapter {
             holder.tvGetGood.setText("发送");
         }else{
             holder.etCode.setVisibility(View.GONE);
-            holder.tvGetGood.setText("同意");
+            if(orderBean.getStatus()==19){
+                holder.tvGetGood.setText("发货");
+            }else{
+                holder.tvGetGood.setText("同意");
+            }
         }
 
         //点击不同意
@@ -253,7 +263,7 @@ public class RefundOrderAdapter extends BaseAdapter {
                     return;
                 }
 
-                if(status==19 && msg.equals("同意")){
+                if(status==19 && msg.equals("发货")){
                     shMap.put(orderId,orderId);
                     notifyDataSetChanged();
                     return;
