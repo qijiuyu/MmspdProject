@@ -34,6 +34,7 @@ public class GoodsAdapter extends BaseAdapter {
         this.context = context;
         this.skuList = skuList;
         this.returnList = returnList;
+
         //解析
         parsingData();
     }
@@ -53,7 +54,7 @@ public class GoodsAdapter extends BaseAdapter {
                 final Order.ReturnListBean returnListBean = returnList.get(k);
                 if (returnListBean.getSkuid() == skuList.get(i).getSkuid()) {
                     //有值表示是“换”
-                    if (returnListBean.getChangeskuid() != 0) {
+                    if (returnListBean.getChangeskuid()>0) {
                         Order.SkulistBean skulistBean = new Order.SkulistBean(returnListBean.getChangeskuid(), returnListBean.getSpucount(), returnListBean.getSpuname(), returnListBean.getSpuprice(),returnListBean.getSpecsvalue());
                         list.add(skulistBean);
                     } else {

@@ -1,6 +1,7 @@
 package com.ylean.mmspd.adapter.order;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,8 @@ public class RefundAdapter extends BaseAdapter {
         holder.tvNumber.setText(String.valueOf(1+position));
         //显示当前订单状态
         OrderStatus.showStatus(holder.tvStatus,orderBean.getStatus());
+        //显示当前订单说明
+        OrderStatus.showShuoMing(holder.tvShuoMing,holder.tvShuoMing2,holder.tvRefundDes,orderBean);
         holder.tvUserName.setText(orderBean.getReceivename());
         holder.tvMobile.setText(orderBean.getPhone());
         holder.tvAddress.setText(orderBean.getAddress());
@@ -75,10 +78,11 @@ public class RefundAdapter extends BaseAdapter {
         GoodsAdapter goodsAdapter = new GoodsAdapter(context,orderBean.getSkulist(),orderBean.getReturnlist());
         holder.listGoods.setAdapter(goodsAdapter);
         holder.tvXjMoney.setText("¥" +Util.setDouble(orderBean.getPrice(),2));
+        holder.tvYhMoney.setText("¥" +Util.setDouble(orderBean.getDiscount(),2));
+        holder.tvPsMoney.setText("¥" +Util.setDouble(orderBean.getFreight(),2));
         holder.tvActualMoney.setText("¥" +Util.setDouble(orderBean.getActualpay(),2));
         holder.tvGetMoney.setText("¥"+ Util.setDouble(orderBean.getSupplierMoney(),2));
         holder.tvRefundTime.setText(orderBean.getShtime());
-        holder.tvRefundDes.setText("退货原因："+orderBean.getShreason());
         holder.tvOrderTime.setText("下单时间："+orderBean.getAddorderdate());
         holder.tvOrderCode.setText("订单编号："+orderBean.getOrdernum());
 
@@ -196,6 +200,14 @@ public class RefundAdapter extends BaseAdapter {
         TextView tvOrderCode;
         @BindView(R.id.tv_copy)
         TextView tvCopy;
+        @BindView(R.id.tv_yh_money)
+        TextView tvYhMoney;
+        @BindView(R.id.tv_ps_money)
+        TextView tvPsMoney;
+        @BindView(R.id.tv_shuoming)
+        TextView tvShuoMing;
+        @BindView(R.id.tv_shuoming2)
+        TextView tvShuoMing2;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

@@ -13,6 +13,7 @@ import android.widget.ListView;
 import com.ylean.mmspd.R;
 import com.ylean.mmspd.activity.order.OrderDetailsActivity;
 import com.ylean.mmspd.activity.order.OrderManagerActivity;
+import com.ylean.mmspd.adapter.order.CancleAdapter;
 import com.ylean.mmspd.adapter.order.RefundAdapter;
 import com.ylean.mmspd.eventbus.EventBusType;
 import com.ylean.mmspd.eventbus.EventStatus;
@@ -44,7 +45,7 @@ public class CancleFragment extends BaseFragment implements MyRefreshLayoutListe
     @BindView(R.id.re_list)
     MyRefreshLayout reList;
     Unbinder unbinder;
-    private RefundAdapter refundAdapter;
+    private CancleAdapter refundAdapter;
     //页数
     private int page=1;
     //fragment是否可见
@@ -64,7 +65,7 @@ public class CancleFragment extends BaseFragment implements MyRefreshLayoutListe
         unbinder = ButterKnife.bind(this, view);
         //刷新加载
         reList.setMyRefreshLayoutListener(this);
-        refundAdapter=new RefundAdapter(mActivity,listAll);
+        refundAdapter=new CancleAdapter(mActivity,listAll);
         listView.setAdapter(refundAdapter);
         listView.setDivider(null);
         //获取订单列表

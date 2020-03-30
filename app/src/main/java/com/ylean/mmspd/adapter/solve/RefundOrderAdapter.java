@@ -17,6 +17,7 @@ import com.ylean.mmspd.eventbus.EventBusType;
 import com.ylean.mmspd.eventbus.EventStatus;
 import com.ylean.mmspd.utils.OrderStatus;
 import com.zxdc.utils.library.bean.Order;
+import com.zxdc.utils.library.util.LogUtils;
 import com.zxdc.utils.library.util.ToastUtil;
 import com.zxdc.utils.library.util.Util;
 import com.zxdc.utils.library.view.ClickTextView;
@@ -80,6 +81,8 @@ public class RefundOrderAdapter extends BaseAdapter {
         holder.tvNumber.setText(String.valueOf(position+1));
         //显示当前订单状态
         OrderStatus.showStatus(holder.tvStatus,orderBean.getStatus());
+        //显示当前订单说明
+        OrderStatus.showShuoMing(holder.tvShuoMing,holder.tvShuoMing2,holder.tvRefundDes,orderBean);
         holder.tvUserName.setText(orderBean.getReceivename());
         holder.tvMobile.setText(orderBean.getPhone());
         holder.tvAddress.setText(orderBean.getAddress());
@@ -88,10 +91,11 @@ public class RefundOrderAdapter extends BaseAdapter {
         GoodsAdapter goodsAdapter = new GoodsAdapter(context,orderBean.getSkulist(),orderBean.getReturnlist());
         holder.listGoods.setAdapter(goodsAdapter);
         holder.tvXjMoney.setText("¥" +Util.setDouble(orderBean.getPrice(),2));
+        holder.tvYhMoney.setText("¥" +Util.setDouble(orderBean.getDiscount(),2));
+        holder.tvPsMoney.setText("¥" +Util.setDouble(orderBean.getFreight(),2));
         holder.tvActualMoney.setText("¥" +Util.setDouble(orderBean.getActualpay(),2));
         holder.tvGetMoney.setText("¥"+ Util.setDouble(orderBean.getSupplierMoney(),2));
         holder.tvRefundTime.setText(orderBean.getShtime());
-        holder.tvRefundDes.setText("退货原因："+orderBean.getShreason());
         holder.tvOrderTime.setText("下单时间："+orderBean.getAddorderdate());
         holder.tvOrderCode.setText("订单编号："+orderBean.getOrdernum());
 
@@ -343,6 +347,14 @@ public class RefundOrderAdapter extends BaseAdapter {
         RelativeLayout rel1;
         @BindView(R.id.rel_2)
         RelativeLayout rel2;
+        @BindView(R.id.tv_yh_money)
+        TextView tvYhMoney;
+        @BindView(R.id.tv_ps_money)
+        TextView tvPsMoney;
+        @BindView(R.id.tv_shuoming)
+        TextView tvShuoMing;
+        @BindView(R.id.tv_shuoming2)
+        TextView tvShuoMing2;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

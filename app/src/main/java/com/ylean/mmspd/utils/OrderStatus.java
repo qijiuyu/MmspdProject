@@ -1,6 +1,9 @@
 package com.ylean.mmspd.utils;
 
+import android.text.TextUtils;
 import android.widget.TextView;
+
+import com.zxdc.utils.library.bean.Order;
 
 /**
  * Created by Administrator on 2019/11/27.
@@ -373,4 +376,54 @@ public class OrderStatus {
                 break;
         }
     }
+
+
+    /**
+     * 显示说明
+     * @param tvShuoMing
+     */
+    public static void showShuoMing(TextView tvShuoMing,TextView tvShuoMing2,TextView tvRefundDes,Order.OrderBean orderBean){
+        switch (orderBean.getStatus()){
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                 tvShuoMing.setText("退款原因");
+                tvShuoMing2.setText("客户发起退款");
+                if(tvRefundDes!=null){
+                    tvRefundDes.setText("退款原因："+orderBean.getShreason());
+                }
+                 break;
+            case 11:
+            case 12:
+            case 13:
+            case 19:
+            case 20:
+            case 21:
+                tvShuoMing.setText("换货原因");
+                tvShuoMing2.setText("客户发起换货");
+                if(tvRefundDes!=null){
+                    tvRefundDes.setText("换货原因："+orderBean.getShreason());
+                }
+                 break;
+            case 16:
+            case 18:
+                tvShuoMing.setText("退款换货原因");
+                tvShuoMing2.setText("客户发起退款换货");
+                if(tvRefundDes!=null){
+                    tvRefundDes.setText("退款换货原因："+orderBean.getShreason());
+                }
+                 break;
+            default:
+                break;
+        }
+        if(tvRefundDes!=null){
+            if(!TextUtils.isEmpty(orderBean.getOrdernote()) && !orderBean.getOrdernote().equals("无")){
+                tvRefundDes.append("\n\n备注："+orderBean.getOrdernote());
+            }
+        }
+    }
+
 }

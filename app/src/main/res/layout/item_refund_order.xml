@@ -8,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -184,10 +184,53 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"/>
 
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_xj_money"
+                    android:text="优惠金额"
+                    android:textColor="@color/color_666666"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="42dp"/>
+
+                <TextView
+                    android:id="@+id/tv_yh_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_xj_money"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_666666"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="42dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_yh_money"
+                    android:text="配送费"
+                    android:textColor="@color/color_666666"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_ps_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_yh_money"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_666666"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_ps_money"
                     android:text="本单顾客实际支付"
                     android:textColor="@color/color_33333"
                     android:textSize="14sp"
@@ -223,7 +266,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="实收金额"
+                    android:text="本单预计收入"
                     android:textColor="@color/color_33333"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -254,6 +297,7 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
+                    android:id="@+id/tv_shuoming"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="退款说明"
@@ -301,9 +345,9 @@
                 android:layout_marginTop="15dp">
 
                 <TextView
+                    android:id="@+id/tv_shuoming2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="客户发起退款"
                     android:textColor="@color/color_666666"
                     android:textSize="13sp"/>
 
