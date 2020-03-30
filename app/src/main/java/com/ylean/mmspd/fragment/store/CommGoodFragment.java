@@ -129,7 +129,7 @@ public class CommGoodFragment extends BaseFragment implements MyRefreshLayoutLis
      */
     public void onRefresh(View view) {
         page=1;
-        getCommentList(HandlerConstant.GET_COMMENT_LIST_SUCCESS1);
+        HttpMethod.getCommentList(String.valueOf(page),String.valueOf(((CommentsActivity)mActivity).pagerIndex),HandlerConstant.GET_COMMENT_LIST_SUCCESS1,handler);
     }
 
     /**
@@ -138,7 +138,7 @@ public class CommGoodFragment extends BaseFragment implements MyRefreshLayoutLis
      */
     public void onLoadMore(View view) {
         page++;
-        getCommentList(HandlerConstant.GET_COMMENT_LIST_SUCCESS2);
+        HttpMethod.getCommentList(String.valueOf(page),String.valueOf(((CommentsActivity)mActivity).pagerIndex),HandlerConstant.GET_COMMENT_LIST_SUCCESS2,handler);
     }
 
 
@@ -170,7 +170,7 @@ public class CommGoodFragment extends BaseFragment implements MyRefreshLayoutLis
         if(isVisibleToUser && view!=null){
            handler.postDelayed(new Runnable() {
                public void run() {
-                   HttpMethod.getCommentList(String.valueOf(page),String.valueOf(((CommentsActivity)mActivity).pagerIndex),index,handler);
+                   reList.startRefresh();
                }
            },300);
         }
