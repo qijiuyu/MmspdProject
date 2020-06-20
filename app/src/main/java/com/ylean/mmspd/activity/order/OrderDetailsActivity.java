@@ -45,6 +45,8 @@ public class OrderDetailsActivity extends BaseActivity {
     TextView tvReceivedTime;
     @BindView(R.id.tv_pay)
     TextView tvPay;
+    @BindView(R.id.tv_actual_money)
+    TextView tvActualMoney;
     //订单号
     private String code;
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -99,6 +101,7 @@ public class OrderDetailsActivity extends BaseActivity {
         listView.setAdapter(goodsAdapter);
         tvDeliveryTime.setText("+¥" + Util.setDouble(orderDetailsBean.getFreight(),2));
         tvCouponsTime.setText("-¥" +Util.setDouble(orderDetailsBean.getDiscount(),2));
+        tvActualMoney.setText("¥"+Util.setDouble(orderDetailsBean.getSupplierMoney(),2));
         tvOrderCode.setText(orderDetailsBean.getOrdernum());
         tvOrderTime.setText(orderDetailsBean.getAddorderdate());
         tvReceivedTime.setText(orderDetailsBean.getConfirmdate());

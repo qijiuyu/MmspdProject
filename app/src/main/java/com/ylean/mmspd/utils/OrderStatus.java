@@ -91,7 +91,7 @@ public class OrderStatus {
             case 8:
             case 9:
             case 10:
-                 tvShuoMing.setText("退款原因");
+                 tvShuoMing.setText("退款说明");
                 tvShuoMing2.setText("客户发起退款");
                 if(tvRefundDes!=null){
                     tvRefundDes.setText("退款原因："+orderBean.getShreason());
@@ -103,7 +103,7 @@ public class OrderStatus {
             case 19:
             case 20:
             case 21:
-                tvShuoMing.setText("换货原因");
+                tvShuoMing.setText("换货说明");
                 tvShuoMing2.setText("客户发起换货");
                 if(tvRefundDes!=null){
                     tvRefundDes.setText("换货原因："+orderBean.getShreason());
@@ -111,7 +111,7 @@ public class OrderStatus {
                  break;
             case 16:
             case 18:
-                tvShuoMing.setText("退款换货原因");
+                tvShuoMing.setText("退款换货说明");
                 tvShuoMing2.setText("客户发起退款换货");
                 if(tvRefundDes!=null){
                     tvRefundDes.setText("退款换货原因："+orderBean.getShreason());

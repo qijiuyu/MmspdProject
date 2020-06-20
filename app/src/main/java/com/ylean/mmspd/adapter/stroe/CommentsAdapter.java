@@ -2,6 +2,7 @@ package com.ylean.mmspd.adapter.stroe;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -157,10 +158,14 @@ public class CommentsAdapter extends BaseAdapter {
      *
      * @param editText
      */
-    private void showInput(EditText editText) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
-        editText.requestFocus();
-        imm.showSoftInput(editText, 0);
+    private void showInput(final EditText editText) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(editText, 0);
+            }
+        },200);
     }
 
 

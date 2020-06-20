@@ -95,6 +95,8 @@ public class GoodsAdapter extends BaseAdapter {
             holder.rel1.setVisibility(View.GONE);
             holder.rel2.setVisibility(View.VISIBLE);
             holder.tvName2.setText(skulistBean.getSpuname()+"["+skulistBean.getSpecsvalue()+"]");
+            holder.tvNum2.setText("x" + skulistBean.getSpucount());
+            holder.tvMoney2.setText("¥" + Util.setDouble(skulistBean.getSpuprice(), 2));
             holder.imgStatus2.setImageResource(R.mipmap.huan);
         }else{
             holder.rel1.setVisibility(View.VISIBLE);
@@ -130,6 +132,10 @@ public class GoodsAdapter extends BaseAdapter {
         TextView tvName2;
         @BindView(R.id.rel_2)
         RelativeLayout rel2;
+        @BindView(R.id.tv_num2)
+        TextView tvNum2;
+        @BindView(R.id.tv_money2)
+        TextView tvMoney2;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

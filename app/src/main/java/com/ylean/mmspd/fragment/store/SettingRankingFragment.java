@@ -58,7 +58,6 @@ public class SettingRankingFragment extends BaseFragment {
 
 
     View view = null;
-
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.listview, container, false);
         unbinder = ButterKnife.bind(this, view);
@@ -108,6 +107,11 @@ public class SettingRankingFragment extends BaseFragment {
     public void onEvent(EventBusType eventBusType) {
         switch (eventBusType.getStatus()) {
             case EventStatus.GET_GOODRANKING_BY_TIME:
+                //清空旧数据
+                list.clear();
+                goodRankingAdapter = new GoodRankingAdapter(mActivity, list);
+                listView.setAdapter(goodRankingAdapter);
+
                 final String time = (String) eventBusType.getObject();
                 if (TextUtils.isEmpty(time)) {
                     return;

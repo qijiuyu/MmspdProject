@@ -87,6 +87,7 @@ public class RefundOrderAdapter extends BaseAdapter {
         holder.tvMobile.setText(orderBean.getPhone());
         holder.tvAddress.setText(orderBean.getAddress());
         holder.tvCount.setText("商品("+orderBean.getSkucount()+")");
+        holder.tvRemark.setText("备注："+orderBean.getOrdernote());
         //显示商品列表
         GoodsAdapter goodsAdapter = new GoodsAdapter(context,orderBean.getSkulist(),orderBean.getReturnlist());
         holder.listGoods.setAdapter(goodsAdapter);
@@ -365,6 +366,8 @@ public class RefundOrderAdapter extends BaseAdapter {
         TextView tvShuoMing;
         @BindView(R.id.tv_shuoming2)
         TextView tvShuoMing2;
+        @BindView(R.id.tv_remark)
+        TextView tvRemark;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
