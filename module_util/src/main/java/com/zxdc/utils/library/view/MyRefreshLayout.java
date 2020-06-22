@@ -16,6 +16,8 @@ public class MyRefreshLayout extends BGARefreshLayout {
      */
     MyRefreshLayoutListener mListener;
 
+    boolean isRefresh=true;
+
     boolean isLoadingMore = true;
 
 
@@ -34,6 +36,9 @@ public class MyRefreshLayout extends BGARefreshLayout {
         setDelegate(new BGARefreshLayoutDelegate() {
             @Override
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
+                if(!isRefresh){
+                    return;
+                }
                 if (mListener != null) {
                     setIsLoadingMoreEnabled(true);
                     mListener.onRefresh(refreshLayout);
@@ -89,4 +94,11 @@ public class MyRefreshLayout extends BGARefreshLayout {
         isLoadingMore = isLoadingMoreEnabled;
     }
 
+    /**
+     * 设置是否可以下刷
+     * @param isRefresh
+     */
+    public void setRefreshEnable(boolean isRefresh){
+        this.isRefresh=isRefresh;
+    }
 }

@@ -60,6 +60,9 @@ public class SettingRankingFragment extends BaseFragment {
     View view = null;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.listview, container, false);
+
+        reList.setIsLoadingMoreEnabled(false);
+        reList.setRefreshEnable(false);
         unbinder = ButterKnife.bind(this, view);
         return view;
     }

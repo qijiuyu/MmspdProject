@@ -108,7 +108,7 @@ public class RefundOrderAdapter extends BaseAdapter {
 
         //订单状态
         final int status=orderBean.getStatus();
-        if(status<11){
+        if(status<=11){
             holder.rel1.setVisibility(View.VISIBLE);
             holder.rel2.setVisibility(View.GONE);
         }else{

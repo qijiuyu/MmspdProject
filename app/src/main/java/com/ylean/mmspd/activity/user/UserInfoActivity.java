@@ -91,6 +91,9 @@ public class UserInfoActivity extends BaseActivity {
                 break;
             //账号设置
             case R.id.rel_account:
+                if(store==null || store.getData()==null){
+                    return;
+                }
                 Intent intent2=new Intent(this,AccountActivity.class);
                 intent2.putExtra("mobile",store.getData().getMobile());
                 startActivity(intent2);
